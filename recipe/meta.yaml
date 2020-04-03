@@ -1,19 +1,19 @@
 {% set name = "xpa" %}
-{% set version = "2.1.19" %}
+{% set version = "2.1.20" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/ericmandel/xpa/archive/v{{ version }}.tar.gz
-  sha256: 44f1059009a7afe12029b808212393e352b3fa61701615350752ecf6c802ea48
+  url: https://github.com/ericmandel/xpa/archive/{{ version }}.tar.gz
+  sha256: 854af367c0f4ffe7a65cb4da854a624e20af3c529f88187b50b22b68f024786a
   patches:
     - add-ldflags-shlib.patch
 
 build:
   number: 0
-  skip: True  # [win]
+  skip: true  # [win]
 
 requirements:
   build:
@@ -31,7 +31,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'seamless communication between many kinds of Unix programs, including X programs and Tcl/Tk programs.'
+  summary: seamless communication between many kinds of Unix programs, including X programs and Tcl/Tk programs.
 
 extra:
   recipe-maintainers:
