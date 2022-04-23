@@ -12,8 +12,12 @@ source:
     - add-ldflags-shlib.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
+  run_exports:
+    # ABI lab page looks fine for major version
+    # https://abi-laboratory.pro/tracker/timeline/xpa
+    - {{ pin_subpackage(name, max_pin='x') }}
 
 requirements:
   build:
